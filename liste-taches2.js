@@ -61,8 +61,10 @@ function rafrechirTableTaches() {
 
     gid("tbodyTaches").innerHTML = s;
     calculerDureeTotaleTaches();
-    //let e = document.querySelector("#zoneFiltre input[name=filtreTaches]:checked").value
-    //console.log(e);
+
+
+    let e = document.querySelector("#zoneFiltre input[name=filtreTaches]:checked").value
+    
     for(let i in taches) {
         if(taches[i].ouverture === false) {
             //let clo = document.querySelector(".cloturee");
