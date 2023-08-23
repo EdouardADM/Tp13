@@ -14,13 +14,13 @@ let ajustementsDurees = {
 
 function initialiserPage() {
     console.log(taches)
-    rafrechirTableTaches();
+    
     gid("zoneFiltre").innerHTML = 
     `<input type="radio" id="filtreTaches1" name="filtreTaches" value="ouvertes" onChange="rafrechirTableTaches()" checked>
     <label for="filtreTaches1">Ouvertes</label>
     <input type="radio" id="filtreTaches2" name="filtreTaches" value="toutes" onChange="rafrechirTableTaches()">
     <label for="filtreTaches2">Toutes</label>`;
-    
+    rafrechirTableTaches();
 }
 
 function ajouterTache(form) {
@@ -50,10 +50,10 @@ function rafrechirTableTaches() {
     let s ="";
     for(let i in taches) {
         if(taches[i].ouverture) {
-            s += `<tr id=${i} class="ouvert"><td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>oui</td><td><button id="B_C_T${i}" onclick="cloturerTache(this)">cloturer</button></td></tr>`;
+            s += `<tr id=${i} class="ouvert"><td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>oui</td><td><button id="B_C_${i}" onclick="cloturerTache(this)">cloturer</button></td></tr>`;
         }
         else {
-            s += `<tr id=${i} class="cloturee"><td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>non</td><td><button id="B_C_T${i}" onclick="ouvrirTache(this)">ouvrir</button></td></tr>`;
+            s += `<tr id=${i} class="cloturee"><td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>non</td><td><button id="B_C_${i}" onclick="ouvrirTache(this)">ouvrir</button></td></tr>`;
         }
 
     }
@@ -63,14 +63,18 @@ function rafrechirTableTaches() {
     calculerDureeTotaleTaches();
 
 
-    let e = document.querySelector("#zoneFiltre input[name=filtreTaches]:checked").value
-    
-    for(let i in taches) {
-        if(taches[i].ouverture === false) {
-            //let clo = document.querySelector(".cloturee");
-            i.style.display = "none";
-        }
+    let e = document.querySelector('#zoneFiltre input[name="filtreTaches"]:checked').value;
+    if(e === 'ouverte') {
+        document.querySelectorAll(".cloturee").forEach((elem) =>{
+            elem.style.display = 'none';
+        }) 
     }
+    else{
+        document.querySelectorAll(".cloturee").forEach((elem) =>{
+            elem.style.display = 'block';
+        })
+    }
+       
 }
 
 
