@@ -48,5 +48,7 @@ function rafrechirTableTaches() {
     gid("tbodyTaches").innerHTML = s;
 }
 function cloturerTache(button) {
-
+    let b = (button.id).substring(4);
+    taches[b].ouverture = false;
+    rafrechirTableTaches();
 }
