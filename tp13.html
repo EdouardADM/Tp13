@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <title>TP13 - Entrainement : Liste de tâches 2</title>
+  <!-- Script à créer! -->
+  <script src="./utils.js"></script>
+  <script src="./liste-taches2.js"></script>
+  <!-- CSS à créer! -->
+  <link rel="stylesheet" href="./tp13.css">
+</head>
+<body onload="initialiserPage();">
+
+<!-- ***** FORMULAIRE ***** -->
+       
+<form id="formListeTaches" action=# onSubmit='return ajouterTache(this);'>
+  <fieldset>
+      <legend>Création de Tâches</legend>
+      <!-- nom -->
+      <label for="tacheNom">Nom * : </label>
+      <input id="tacheNom" name="nom" type="text" required placeholder="Introduire le nom de la tâche..." > <br>
+      <!-- date limite -->
+      <label for="tacheDateLimite">Date limite * : </label>
+      <input id="tacheDateLimite" name="limite" type="date" required><br>
+      <!-- importance -->
+      <label for="tacheImportance">Importance * : </label>
+      <select id="tacheImportance" name="importance">
+          <option value="top" selected>Top</option>
+          <option value="cool">Cool</option>
+          <option value="bof">Bof</option>
+      </select><br>
+      <!-- duree -->
+      <label for="tacheDuree">Durée (heures) * : </label>
+      <input id="tacheDuree" name="duree" type="number" min="0.5" max="15" step="0.5" required ><br>
+      <!-- description -->
+      <label for="tacheDescription">Description : </label>
+      <textarea id="tacheDescription" name="description" rows="4" cols="50" placeholder="Introduire la description de la tâche..."></textarea><br>
+      <!-- boutons -->
+      <input type="submit" value="Ajouter Tâche">
+      <input type="reset">
+  </fieldset>
+</form>
+
+<!-- ***** AFFICHAGE ***** -->
+
+<div id="zoneTotalHeures">
+  <p>Total des tâches à effectuer : <span id="totalHeures">0.00</span> heures.</p>
+</div>
+<div id="zoneFiltre">
+</div>
+<div id="zoneTableTaches">
+  <table>
+      <thead>
+      <tr>
+          <th id="tachesTitreNom">Nom</th>
+          <th id="tachesTitreLimite">Limite</th>
+          <th id="tachesTitrePriorite">Priorité</th>
+          <th id="tachesTitreDuree">Durée</th>
+          <th id="tachesTitreOuverte">Ouverte</th>
+          <th id="tachesTitreAction">Action</th>
+      </tr>
+      </thead>
+      <tbody id="tbodyTaches"></tbody>
+  </table>
+</div>
+<div id="zoneDescription">
+  <h3>Description :</h3>
+  <div id="texteDescription"></div>
+</div>
+<footer class="clear"></footer>
+</body>
+
+</html>

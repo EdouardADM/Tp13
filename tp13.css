@@ -1,0 +1,70 @@
+form {
+    width: 500px;
+}
+
+fieldset {
+    border-radius: 5px;
+}
+
+#tacheNom {
+    float: right;
+    margin: 5px;
+    margin-right: 100px;
+    width: 240px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#tacheDateLimite {
+    float: right;
+    margin: 5px;
+    margin-right: 100px;
+    width: 243px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#tacheImportance{
+    float: right;
+    margin: 5px;
+    margin-right: 100px;
+    width: 246px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#tacheDuree{
+    float: right;
+    margin: 5px;
+    margin-right: 100px;
+    width: 240px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#tacheDescription{
+    float: right;
+    margin: 5px;
+    margin-right: 100px;
+    width: 240px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+input[type="submit"]{
+    margin-right: 10px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #ebf4dc;
+}
+
+input[type="reset"]{
+    width: 120px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #f4eadc;
+}
+
