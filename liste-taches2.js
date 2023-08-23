@@ -50,10 +50,10 @@ function rafrechirTableTaches() {
     let s ="";
     for(let i in taches) {
         if(taches[i].ouverture) {
-            s += `<tr id=${i} class="ouvert"><td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>oui</td><td><button id="B_C_T${compteur}" onclick="cloturerTache(this)">cloturer</button></td></tr>`;
+            s += `<tr id=${i} class="ouvert"><td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>oui</td><td><button id="B_C_T${i}" onclick="cloturerTache(this)">cloturer</button></td></tr>`;
         }
         else {
-            s += `<tr id=${i} class="cloturee"><td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>non</td><td><button id="B_C_T${compteur}" onclick="ouvrirTache(this)">ouvrir</button></td></tr>`;
+            s += `<tr id=${i} class="cloturee"><td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>non</td><td><button id="B_C_T${i}" onclick="ouvrirTache(this)">ouvrir</button></td></tr>`;
         }
 
     }
