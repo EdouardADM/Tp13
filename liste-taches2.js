@@ -55,7 +55,7 @@ function rafrechirTableTaches() {
         else {
             s += `<tr id=${i} class="cloturee"><td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>non</td><td><button id="B_C_T${compteur}" onclick="ouvrirTache(this)">ouvrir</button></td></tr>`;
         }
-        compteur++;
+
     }
 
 
