@@ -90,3 +90,9 @@ input[type="reset"]{
     
     display: flex;
 }
+
+#zoneFiltre {
+    text-align: left;
+    margin-bottom: 10px;
+    
+}
