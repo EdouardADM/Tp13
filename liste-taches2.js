@@ -1,8 +1,7 @@
 "use strict";
 
 let taches = {
-    T105:{nom:'cadeaux', date: '2017-12-23', importance:'top', duree:'1', desc:'', ouverture: true}
-};
+    };
 
 let compteur= 101;
 
@@ -13,14 +12,6 @@ function initialiserPage() {
 }
 
 function ajouterTache(form) {
-    /*let obj = {};
-    //recupere les données
-    obj.nom  = form.nom.value;
-    obj.date = form.limite.value;
-    obj.improtance = form.improtance.value;
-    obj.duree = parseFloat(form.duree.value);
-    obj.desc = form.description.value;
-    obj.ouverture = true;*/
     let t ={};
     t.nom =form.nom.value;
 
@@ -31,25 +22,31 @@ function ajouterTache(form) {
 
     t.desc=form.description.value;
 
-    t["ouverte"] =true;
+    t.ouverture =true;
     //les mettres dans taches 
     taches["T"+compteur] = t;
     console.log (taches);
+    form.nom.value = null;
+    form.limite.value = null;
+    form.duree.value = null;
     rafrechirTableTaches()
     return false;
 }
 
 function rafrechirTableTaches() {
-    let s ="<tr>";
+    let s =`<tr id="T"${compteur}>`;
     for(let i in taches) {
         if(taches[i].ouverture) {
-        s += `<td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>oui</td></tr>`;
+        s += `<td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>oui</td><td><button id="B_C_T${compteur}" onclick="cloturerTache(this)">cloturer</button></td></tr>`;
         }
         else {
-            s += `<td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>non</td></tr>`;
+            s += `<td>${taches[i].nom}</td><td>${taches[i].date}</td><td>${taches[i].importance}</td><td>${taches[i].duree}</td><td>non</td><td><button id="B_C_T${compteur}" onclick="cloturerTache(this)">cloturer</button></td></tr>`;
         }
     }
 
 
-    document.getElementById("tbodyTaches").innerHTML = s;
+    gid("tbodyTaches").innerHTML = s;
+}
+function cloturerTache(button) {
+
 }
