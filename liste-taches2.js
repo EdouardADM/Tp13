@@ -64,14 +64,14 @@ function rafrechirTableTaches() {
 
 
     let e = document.querySelector('#zoneFiltre input[name="filtreTaches"]:checked').value;
-    if(e === 'ouverte') {
+    if(e === 'ouvertes') {
         document.querySelectorAll(".cloturee").forEach((elem) =>{
             elem.style.display = 'none';
         }) 
     }
     else{
         document.querySelectorAll(".cloturee").forEach((elem) =>{
-            elem.style.display = 'block';
+            elem.style.display = 'table-row';
         })
     }
        
